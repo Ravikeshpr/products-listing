@@ -10,7 +10,7 @@ const MasterLayout = ({ children }) => (
         </main>
 
         <footer className="footer">
-            <span>© {new Date().getFullYear()} Product Store</span>
+            <span>© {new Date().getFullYear()}, your one stop shop.</span>
         </footer>
     </div>
 );

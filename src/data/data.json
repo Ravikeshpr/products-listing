@@ -1,0 +1,99 @@
+[
+    {
+        "index": 1,
+        "isSale": false,
+        "price": "$49.99",
+        "productImage": "Product_1.jpeg",
+        "productName": "Pure Blonde Crate",
+        "type": "Beer"
+    },
+    {
+        "index": 2,
+        "isSale": true,
+        "price": "$14.99",
+        "productImage": "Product_2.jpeg",
+        "productName": "Victoria Bitter 4x6x375ml",
+
+        "type": "Beer"
+    },
+    {
+        "index": 3,
+        "isSale": false,
+        "price": "$24.99",
+        "productImage": "Product_3.jpeg",
+        "productName": "Kirin Megumi 4x6x330ml",
+        "type": "Beer"
+    },
+    {
+        "index": 4,
+        "isSale": true,
+        "price": "$4.99",
+        "productImage": "Product_4.jpeg",
+        "productName": "Panhead CH Johnny Octane Can",
+        "type": "Beer"
+    },
+    {
+        "index": 5,
+        "isSale": false,
+        "price": "$25.99",
+        "productImage": "Product_5.jpeg",
+        "productName": "Aquila Spark SauvB Bottle",
+        "type": "Wine"
+    },
+    {
+        "index": 6,
+        "isSale": true,
+        "price": "$29.99",
+        "productImage": "Product_6.jpeg",
+        "productName": "Bernadino Spumante Bottle",
+        "type": "Wine"
+    },
+    {
+        "index": 7,
+        "isSale": true,
+        "price": "$69.99",
+        "productImage": "Product_7.jpeg",
+        "productName": "Grey Goose Orginal 10x12x50ml",
+        "type": "Spirits"
+    },
+    {
+        "index": 8,
+        "isSale": false,
+        "price": "$49.99",
+        "productImage": "Product_8.jpeg",
+        "productName": "Scrumpy RBerry 6x1.25L",
+        "type": "Cider"
+    },
+    {
+        "index": 9,
+        "isSale": true,
+        "price": 12.99,
+        "productImage": "Product_9.jpeg",
+        "productName": "Classic Lager",
+        "type": "beer"
+    },
+    {
+        "index": 10,
+        "isSale": false,
+        "price": 19.99,
+        "productImage": "Product_10.jpeg",
+        "productName": "Red Wine Reserve",
+        "type": "wine"
+    },
+    {
+        "index": 11,
+        "isSale": true,
+        "price": 15.49,
+        "productImage": "Product_11.jpeg",
+        "productName": "Spiced Rum",
+        "type": "rum"
+    },
+    {
+        "index": 12,
+        "isSale": false,
+        "price": 10.99,
+        "productImage": "Product_12.jpeg",
+        "productName": "Pale Ale",
+        "type": "beer"
+    }
+]
