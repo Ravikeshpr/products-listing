@@ -1,7 +1,12 @@
-import "./App.css";
+import ProductsList from "./containers/ProductsList";
+import MasterLayout from "./layout/MasterLayout";
 
 function App() {
-    return <h1>Product List</h1>;
+    return (
+        <MasterLayout>
+            <ProductsList />
+        </MasterLayout>
+    );
 }
 
 export default App;
