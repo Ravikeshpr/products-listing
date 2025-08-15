@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts, setSearchText } from "../store/productsSlice";
 import "./ProductsList.css";
@@ -11,12 +11,14 @@ function ProductsList() {
     const { products, status, error, search } = useSelector(
         (state) => state.products
     );
+
     const { types, filterType, onChange } = useProductTypeFilter();
+
     useEffect(() => {
         dispatch(fetchProducts());
     }, [dispatch]);
 
-    const filteredProducts = products.filter((product) => {
+    const filteredProducts = products?.filter((product) => {
         const matchesType = filterType === "all" || product.type === filterType;
         const matchesSearch = product.productName
             .trim()
@@ -24,6 +26,12 @@ function ProductsList() {
             .includes(search.toLowerCase());
         return matchesType && matchesSearch;
     });
+
+    const handleSearch = useCallback(
+        (e) => dispatch(setSearchText(e.target.value)),
+        [dispatch]
+    );
+
     return (
         <div className="container">
             <h1 className="title" tabIndex={0} aria-label="Product Listing">
@@ -40,9 +48,7 @@ function ProductsList() {
                         type="text"
                         placeholder="Search product name..."
                         value={search ?? ""}
-                        onChange={(e) =>
-                            dispatch(setSearchText(e.target.value))
-                        }
+                        onChange={handleSearch}
                         autoComplete="off"
                     />
                 </div>
@@ -79,7 +85,7 @@ function ProductsList() {
                             No products found.
                         </p>
                     )}
-                {filteredProducts.map((product) =>
+                {filteredProducts?.map((product) =>
                     product ? (
                         <ProductCard key={product.index} product={product} />
                     ) : null

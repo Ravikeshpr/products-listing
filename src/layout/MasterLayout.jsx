@@ -1,3 +1,4 @@
+import { ErrorBoundary } from "./ErrorBoundry";
 import "./MasterLayout.css";
 
 const MasterLayout = ({ children }) => (
@@ -5,10 +6,11 @@ const MasterLayout = ({ children }) => (
         <header className="header">
             <h1>Product Store</h1>
         </header>
-        <main className="main-content" id="main-content">
-            {children}
-        </main>
-
+        <ErrorBoundary>
+            <main className="main-content" id="main-content">
+                {children}
+            </main>
+        </ErrorBoundary>
         <footer className="footer">
             <span>© {new Date().getFullYear()}, your one stop shop.</span>
         </footer>
