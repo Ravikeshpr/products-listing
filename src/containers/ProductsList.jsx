@@ -34,7 +34,12 @@ function ProductsList() {
 
     return (
         <div className="container">
-            <h1 className="title" tabIndex={0} aria-label="Product Listing">
+            <h1
+                className="title"
+                tabIndex={0}
+                id="product-listing-title"
+                aria-label="Product Listing"
+            >
                 Product Listing
             </h1>
             <div className="controls">
@@ -50,6 +55,7 @@ function ProductsList() {
                         value={search ?? ""}
                         onChange={handleSearch}
                         autoComplete="off"
+                        aria-label="Search products by name"
                     />
                 </div>
                 <div className="form-block">
@@ -72,10 +78,14 @@ function ProductsList() {
                 </div>
             </div>
 
-            <div className="product-grid">
-                {status === "loading" && <p>Loading...</p>}
+            <div
+                className="product-grid"
+                role="list"
+                aria-labelledby="product-listing-title"
+            >
+                {status === "loading" && <p role="status">Loading...</p>}
                 {status === "failed" && (
-                    <p className="no-results">
+                    <p className="no-results" role="alert">
                         {error ?? "An error occurred."}
                     </p>
                 )}
