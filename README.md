@@ -24,10 +24,14 @@ This project is a React-based application for listing products.
     ```bash
     npm run test
     ```
+4. Application will run on url:
+    ```bash
+    http://localhost:5173/
+    ```
 
 ## Following is the funtionality and fetures implemented
 
-1. React components is used to show the UI.
+1. React components is used to build UI components and CSS flex properties is used to make app responsive.
 2. Folder structure is made considering a big enterprise level application
 3. RTK/Redux was not necessary for such small app but has used to demonstrate the knowledge
 4. Search functionality and filter is implemented using redux and good practices of one way data flow is used
@@ -38,3 +42,7 @@ This project is a React-based application for listing products.
 ## Below is the screenshot of the application
 
 ![alt text](image.png)
+
+## Mobile view
+
+![alt text](mobile_view_.png)
