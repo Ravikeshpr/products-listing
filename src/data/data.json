@@ -70,7 +70,7 @@
         "price": "$12.99",
         "productImage": "Product_9.jpeg",
         "productName": "Classic Lager",
-        "type": "beer"
+        "type": "Beer"
     },
     {
         "index": 10,
@@ -78,7 +78,7 @@
         "price": "$19.99",
         "productImage": "Product_10.jpeg",
         "productName": "Red Wine Reserve",
-        "type": "wine"
+        "type": "Wine"
     },
     {
         "index": 11,
@@ -86,7 +86,7 @@
         "price": "$15.99",
         "productImage": "Product_11.jpeg",
         "productName": "Spiced Rum",
-        "type": "rum"
+        "type": "Rum"
     },
     {
         "index": 12,
@@ -94,6 +94,6 @@
         "price": "$10.99",
         "productImage": "Product_12.jpeg",
         "productName": "Pale Ale",
-        "type": "beer"
+        "type": "Beer"
     }
 ]

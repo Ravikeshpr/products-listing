@@ -9,7 +9,6 @@ const ProductCard = ({ product }) => {
                 src={`/images/${productImage}`}
                 alt={productName ? productName : "Product image"}
                 className="product-image"
-                loading="lazy"
             />
             <div className="product-info">
                 <h3 className="product-name">{productName ?? ""}</h3>
