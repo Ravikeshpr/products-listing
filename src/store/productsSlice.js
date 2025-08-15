@@ -24,6 +24,9 @@ const productsSlice = createSlice({
         setFilterType(state, action) {
             state.filterType = action.payload;
         },
+        setSearchText(state, action) {
+            state.search = action.payload;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -42,5 +45,5 @@ const productsSlice = createSlice({
     },
 });
 
-export const { setFilterType } = productsSlice.actions;
+export const { setFilterType, setSearchText } = productsSlice.actions;
 export default productsSlice.reducer;

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../store/productsSlice";
+import { fetchProducts, setSearchText } from "../store/productsSlice";
 import "./ProductsList.css";
 import ProductCard from "../components/ProductCard";
 import useProductTypeFilter from "../hooks/useProductTypeFilter";
@@ -8,17 +8,21 @@ import useProductTypeFilter from "../hooks/useProductTypeFilter";
 function ProductsList() {
     const dispatch = useDispatch();
 
-    const { products, status, error } = useSelector((state) => state.products);
+    const { products, status, error, search } = useSelector(
+        (state) => state.products
+    );
     const { types, filterType, onChange } = useProductTypeFilter();
     useEffect(() => {
         dispatch(fetchProducts());
     }, [dispatch]);
 
     const filteredProducts = products.filter((product) => {
-        console.log("Ffff", product, filterType);
         const matchesType = filterType === "all" || product.type === filterType;
-        console.log("ggg", matchesType, filterType);
-        return matchesType;
+        const matchesSearch = product.productName
+            .trim()
+            .toLowerCase()
+            .includes(search.toLowerCase());
+        return matchesType && matchesSearch;
     });
     return (
         <div className="container">
@@ -26,23 +30,40 @@ function ProductsList() {
                 Product Listing
             </h1>
             <div className="controls">
-                <input className="search-bar" />
-                <label htmlFor="type-dropdown" className="filter-label">
-                    Filter by type
-                </label>
-                <select
-                    id="type-dropdown"
-                    value={filterType ?? "all"}
-                    onChange={onChange}
-                    className="dropdown"
-                    aria-label="Filter products by type"
-                >
-                    {(types ?? ["all"]).map((type) => (
-                        <option key={type} value={type}>
-                            {type.charAt(0).toUpperCase() + type.slice(1)}
-                        </option>
-                    ))}
-                </select>
+                <div className="form-block">
+                    <label htmlFor="search-bar" className="filter-label">
+                        Search
+                    </label>
+                    <input
+                        className="search-bar"
+                        id="search-bar"
+                        type="text"
+                        placeholder="Search product name..."
+                        value={search ?? ""}
+                        onChange={(e) =>
+                            dispatch(setSearchText(e.target.value))
+                        }
+                        autoComplete="off"
+                    />
+                </div>
+                <div className="form-block">
+                    <label htmlFor="type-dropdown" className="filter-label">
+                        Filter by type
+                    </label>
+                    <select
+                        id="type-dropdown"
+                        value={filterType ?? "all"}
+                        onChange={onChange}
+                        className="dropdown"
+                        aria-label="Filter products by type"
+                    >
+                        {(types ?? ["all"]).map((type) => (
+                            <option key={type} value={type}>
+                                {type.charAt(0).toUpperCase() + type.slice(1)}
+                            </option>
+                        ))}
+                    </select>
+                </div>
             </div>
 
             <div className="product-grid">
